@@ -54,4 +54,20 @@ public class generateXAXBTest {
         //then
         assertEquals("0A4B", result);
     }
+
+    @Test
+    void should_return_2A2B_when_guess_given_1432() {
+        //given
+        int[] answer = {1,2,3,4};
+        int[] inputGuess = {1,4,3,2};
+        GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
+        when(generateAnswer.generateAnswer()).thenReturn(answer);
+        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+
+        //when
+        String result = generatexAxB.guess(inputGuess);
+
+        //then
+        assertEquals("2A2B", result);
+    }
 }
