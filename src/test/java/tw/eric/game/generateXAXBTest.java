@@ -13,7 +13,7 @@ public class generateXAXBTest {
         int[] inputGuess = {1,2,3,4};
 
         //when
-        String result = generatexAxB.guess(inputGuess);
+        String result = generatexAxB.guess(answer, inputGuess);
 
         //then
         assertEquals("4A0B",result);
