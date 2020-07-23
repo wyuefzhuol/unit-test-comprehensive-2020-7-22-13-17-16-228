@@ -17,4 +17,17 @@ public class guessValidTest {
         //then
         assertEquals(true, isValid);
     }
+
+    @Test
+    void should_return_false_when_guess_valid_given_112314() {
+        //given
+        GuessValid guessValid = new GuessValid();
+        int[] inputGuess = {1,12,3,14};
+
+        //when
+        boolean isValid = guessValid.isGuessValid(inputGuess);
+
+        //then
+        assertEquals(false, isValid);
+    }
 }
