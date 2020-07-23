@@ -20,6 +20,9 @@ public class generateXAXB {
         if (is2A2B(answer, inputGuess) != null) {
             return is2A2B(answer, inputGuess);
         }
+        if (is1A1B(answer, inputGuess) != null) {
+            return is1A1B(answer, inputGuess);
+        }
         return null;
     }
 
@@ -73,6 +76,22 @@ public class generateXAXB {
         }
         if (countB != 2 || countA != 2) {
             return null;
+        }
+        return ""+countA+"A"+countB+"B";
+    }
+
+    public String is1A1B(int[] answer, int[] inputGuess) {
+        int countA = 0;
+        int countB = 0;
+        for (int i = 0; i < answer.length; i++) {
+            for (int j = 0; j < inputGuess.length; j++) {
+                if (answer[i] == inputGuess[j] && i != j) {
+                    countB++;
+                }
+                if (answer[i] == inputGuess[j] && i == j) {
+                    countA++;
+                }
+            }
         }
         return ""+countA+"A"+countB+"B";
     }
