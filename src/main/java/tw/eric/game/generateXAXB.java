@@ -14,6 +14,9 @@ public class generateXAXB {
         if (is0A0B(answer, inputGuess)) {
             return "0A0B";
         }
+        if (is0A4B(answer, inputGuess)) {
+            return "0A4B";
+        }
         return null;
     }
 
@@ -33,6 +36,21 @@ public class generateXAXB {
                     return false;
                 }
             }
+        }
+        return true;
+    }
+
+    public boolean is0A4B(int[] answer, int[] inputGuess) {
+        int countB = 0;
+        for (int i = 0; i < answer.length; i++) {
+            for (int j = 0; j < inputGuess.length; j++) {
+                if (answer[i] == inputGuess[j] && i != j) {
+                    countB++;
+                }
+            }
+        }
+        if (countB != 4) {
+            return false;
         }
         return true;
     }
