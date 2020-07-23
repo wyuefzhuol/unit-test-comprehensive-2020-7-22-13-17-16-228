@@ -86,4 +86,20 @@ public class generateXAXBTest {
         //then
         assertEquals("1A1B", result);
     }
+
+    @Test
+    void  should_return_0A2B_when_guess_given_5172() {
+        //given
+        int[] answer = {1,2,3,4};
+        int[] inputGuess = {5,1,7,2};
+        GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
+        when(generateAnswer.generateAnswer()).thenReturn(answer);
+        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+
+        //when
+        String result = generatexAxB.guess(inputGuess);
+
+        //then
+        assertEquals("0A2B", result);
+    }
 }
