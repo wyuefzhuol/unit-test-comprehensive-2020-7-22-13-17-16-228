@@ -5,13 +5,14 @@ public class GuessValid {
         if (inputGuess.length != 4) {
             return false;
         }
-        int sum = 0;
-        int n = inputGuess.length;
-        for(int i : inputGuess) {
-            sum += i;
-        }
-        if (sum != n*(n+1)/2) {
-            return false;
+        int temp = 0;
+        for (int i = 0; i < inputGuess.length - 1; i++) {
+            temp = inputGuess[i];
+            for (int j = i + 1; j < inputGuess.length; j++) {
+                if (temp == inputGuess[j]) {
+                    return false;
+                }
+            }
         }
         for (int i = 0; i < inputGuess.length; i++) {
             if (inputGuess[i] < 0 || inputGuess[i] > 9) {
