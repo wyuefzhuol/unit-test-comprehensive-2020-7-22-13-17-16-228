@@ -8,6 +8,22 @@ public class GenerateRandomAnswer implements GenerateAnswer {
     }
 
     public boolean isGuessValid(int[] answer) {
-        return false;
+        if (answer.length != 4) {
+            return false;
+        }
+        int sum = 0;
+        int n = answer.length;
+        for(int i : answer) {
+            sum += i;
+        }
+        if (sum != n*(n+1)/2) {
+            return false;
+        }
+        for (int i = 0; i < answer.length; i++) {
+            if (answer[i] < 0 || answer[i] > 9) {
+                return false;
+            }
+        }
+        return true;
     }
 }
