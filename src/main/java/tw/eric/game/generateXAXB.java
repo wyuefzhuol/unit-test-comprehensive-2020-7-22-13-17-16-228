@@ -17,8 +17,8 @@ public class generateXAXB {
         if (is0A4B(answer, inputGuess)) {
             return "0A4B";
         }
-        if (is2A2B(answer, inputGuess)) {
-            return "2A2B";
+        if (is2A2B(answer, inputGuess) != null) {
+            return is2A2B(answer, inputGuess);
         }
         return null;
     }
@@ -58,7 +58,7 @@ public class generateXAXB {
         return true;
     }
 
-    public boolean is2A2B(int[] answer, int[] inputGuess) {
+    public String is2A2B(int[] answer, int[] inputGuess) {
         int countA = 0;
         int countB = 0;
         for (int i = 0; i < answer.length; i++) {
@@ -72,8 +72,8 @@ public class generateXAXB {
             }
         }
         if (countB != 2 || countA != 2) {
-            return false;
+            return null;
         }
-        return true;
+        return ""+countA+"A"+countB+"B";
     }
 }
