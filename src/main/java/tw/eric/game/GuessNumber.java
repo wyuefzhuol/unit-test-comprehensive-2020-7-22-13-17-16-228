@@ -27,19 +27,19 @@ public class GuessNumber {
     }
 
     public String getGuessResult(int[] inputGuess) {
-        int countA = 0;
-        int countB = 0;
+        int countOfCorrectNumberAndCorrectPosition = 0;
+        int countOfCorrectNumberAndWrongPosition = 0;
         for (int i = 0; i < answer.length; i++) {
             for (int j = 0; j < inputGuess.length; j++) {
                 if (answer[i] == inputGuess[j] && i != j) {
-                    countB++;
+                    countOfCorrectNumberAndCorrectPosition++;
                 }
                 if (answer[i] == inputGuess[j] && i == j) {
-                    countA++;
+                    countOfCorrectNumberAndWrongPosition++;
                 }
             }
         }
-        return ""+countA+"A"+countB+"B";
+        return ""+countOfCorrectNumberAndCorrectPosition+"A"+countOfCorrectNumberAndWrongPosition+"B";
     }
 
     public boolean isGameWin(int[] guess) {
