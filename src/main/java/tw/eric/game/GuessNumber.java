@@ -2,14 +2,14 @@ package tw.eric.game;
 
 import java.util.Scanner;
 
-public class generateXAXB {
+public class GuessNumber {
     private int[] answer;
 
-    public generateXAXB(int[] answer) {
+    public GuessNumber(int[] answer) {
         this.answer = answer;
     }
 
-    public generateXAXB(GenerateAnswer generateAnswer) {
+    public GuessNumber(GenerateAnswer generateAnswer) {
         this.answer = generateAnswer.generateAnswer();
     }
 

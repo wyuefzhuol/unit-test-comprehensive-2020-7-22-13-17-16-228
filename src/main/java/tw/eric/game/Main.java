@@ -6,13 +6,13 @@ public class Main {
         GenerateRandomAnswer generateRandomAnswer = new GenerateRandomAnswer();
         int[] answer = generateRandomAnswer.generateAnswer();
 
-        generateXAXB generateXAXB = new generateXAXB(answer);
+        GuessNumber GuessNumber = new GuessNumber(answer);
         int[] guess = new int[4];
 
         for (int i = 0; i < 6; i++) {
-            guess = generateXAXB.inputGuess();
-            System.out.println("Output: " + generateXAXB.guess(guess));
-            if (generateXAXB.guess(guess).equals("4A0B")) {
+            guess = GuessNumber.inputGuess();
+            System.out.println("Output: " + GuessNumber.guess(guess));
+            if (GuessNumber.guess(guess).equals("4A0B")) {
                 System.out.println("You win!!");
                 break;
             }

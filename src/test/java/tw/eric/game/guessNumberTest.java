@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class generateXAXBTest {
+public class guessNumberTest {
     @Test
     void should_return_4A0B_when_guess_given_1234() {
         //given
@@ -14,10 +14,10 @@ public class generateXAXBTest {
         int[] inputGuess = {1,2,3,4};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
         when(generateAnswer.generateAnswer()).thenReturn(answer);
-        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+        GuessNumber guessNumber = new GuessNumber(generateAnswer);
 
         //when
-        String result = generatexAxB.guess(inputGuess);
+        String result = guessNumber.guess(inputGuess);
 
         //then
         assertEquals("4A0B",result);
@@ -30,10 +30,10 @@ public class generateXAXBTest {
         int[] inputGuess = {5,6,7,8};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
         when(generateAnswer.generateAnswer()).thenReturn(answer);
-        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+        GuessNumber guessNumber = new GuessNumber(generateAnswer);
 
         //when
-        String result = generatexAxB.guess(inputGuess);
+        String result = guessNumber.guess(inputGuess);
 
         //then
         assertEquals("0A0B", result);
@@ -46,10 +46,10 @@ public class generateXAXBTest {
         int[] inputGuess = {2,3,4,1};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
         when(generateAnswer.generateAnswer()).thenReturn(answer);
-        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+        GuessNumber guessNumber = new GuessNumber(generateAnswer);
 
         //when
-        String result = generatexAxB.guess(inputGuess);
+        String result = guessNumber.guess(inputGuess);
 
         //then
         assertEquals("0A4B", result);
@@ -62,10 +62,10 @@ public class generateXAXBTest {
         int[] inputGuess = {1,4,3,2};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
         when(generateAnswer.generateAnswer()).thenReturn(answer);
-        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+        GuessNumber guessNumber = new GuessNumber(generateAnswer);
 
         //when
-        String result = generatexAxB.guess(inputGuess);
+        String result = guessNumber.guess(inputGuess);
 
         //then
         assertEquals("2A2B", result);
@@ -78,10 +78,10 @@ public class generateXAXBTest {
         int[] inputGuess = {1,5,7,2};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
         when(generateAnswer.generateAnswer()).thenReturn(answer);
-        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+        GuessNumber guessNumber = new GuessNumber(generateAnswer);
 
         //when
-        String result = generatexAxB.guess(inputGuess);
+        String result = guessNumber.guess(inputGuess);
 
         //then
         assertEquals("1A1B", result);
@@ -94,10 +94,10 @@ public class generateXAXBTest {
         int[] inputGuess = {5,1,7,2};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
         when(generateAnswer.generateAnswer()).thenReturn(answer);
-        generateXAXB generatexAxB = new generateXAXB(generateAnswer);
+        GuessNumber guessNumber = new GuessNumber(generateAnswer);
 
         //when
-        String result = generatexAxB.guess(inputGuess);
+        String result = guessNumber.guess(inputGuess);
 
         //then
         assertEquals("0A2B", result);
