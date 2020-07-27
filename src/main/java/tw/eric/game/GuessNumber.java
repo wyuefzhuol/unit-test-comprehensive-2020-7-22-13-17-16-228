@@ -10,15 +10,17 @@ public class GuessNumber {
     }
 
     public int[] inputGuess() {
+        final String inputMessage = "Please input your guess number";
+        final String notValidMessage = "Not valid, please input again";
         int[] guess = new int[4];
         Scanner sc = new Scanner(System.in);
         do {
-            System.out.println("Please input your guess number");
+            System.out.println(inputMessage);
             for(int i = 0; i < guess.length; i++){
                 guess[i] = sc.nextInt();
             }
             if (!isGuessValid(guess)) {
-                System.out.println("Not valid, please input again");
+                System.out.println(notValidMessage);
             }
         } while (!isGuessValid(guess));
         return guess;
@@ -41,8 +43,9 @@ public class GuessNumber {
     }
 
     public boolean isGameWin(int[] guess) {
+        final String winResult = "4A0B";
         System.out.println("Output: " + getGuessResult(guess));
-        return getGuessResult(guess).equals("4A0B");
+        return getGuessResult(guess).equals(winResult);
     }
 
     public boolean isGuessValid(int[] inputGuess) {
