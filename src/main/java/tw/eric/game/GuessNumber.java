@@ -29,7 +29,7 @@ public class GuessNumber {
         return guess;
     }
 
-    public String guess(int[] inputGuess) {
+    public String getGuessResult(int[] inputGuess) {
         int countA = 0;
         int countB = 0;
         for (int i = 0; i < answer.length; i++) {
@@ -46,7 +46,7 @@ public class GuessNumber {
     }
 
     public boolean isGameWin(int[] guess) {
-        System.out.println("Output: " + guess(guess));
-        return guess(guess).equals("4A0B");
+        System.out.println("Output: " + getGuessResult(guess));
+        return getGuessResult(guess).equals("4A0B");
     }
 }
