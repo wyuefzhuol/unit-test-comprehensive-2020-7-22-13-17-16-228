@@ -21,25 +21,4 @@ public class GenerateRandomAnswer implements GenerateAnswer {
         }
         return result;
     }
-
-    public boolean isGuessValid(int[] answer) {
-        if (answer.length != 4) {
-            return false;
-        }
-        int temp = 0;
-        for (int i = 0; i < answer.length - 1; i++) {
-            temp = answer[i];
-            for (int j = i + 1; j < answer.length; j++) {
-                if (temp == answer[j]) {
-                    return false;
-                }
-            }
-        }
-        for (int i = 0; i < answer.length; i++) {
-            if (answer[i] < 0 || answer[i] > 9) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
