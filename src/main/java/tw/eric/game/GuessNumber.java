@@ -5,10 +5,6 @@ import java.util.Scanner;
 public class GuessNumber {
     private int[] answer;
 
-    public GuessNumber(int[] answer) {
-        this.answer = answer;
-    }
-
     public GuessNumber(GenerateAnswer generateAnswer) {
         this.answer = generateAnswer.generateAnswer();
     }

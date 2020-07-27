@@ -6,9 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         GenerateRandomAnswer generateRandomAnswer = new GenerateRandomAnswer();
-        int[] answer = generateRandomAnswer.generateAnswer();
 
-        GuessNumber GuessNumber = new GuessNumber(answer);
+        GuessNumber GuessNumber = new GuessNumber(generateRandomAnswer);
 
         final int firstRound = 1;
         final int lastRound = 6;
