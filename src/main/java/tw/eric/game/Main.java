@@ -1,6 +1,8 @@
 package tw.eric.game;
 
 public class Main {
+    final public static String winMessage = "You win!!";
+    final public static String failedMessage = "You failes!!";
 
     public static void main(String[] args) {
         GenerateRandomAnswer generateRandomAnswer = new GenerateRandomAnswer();
@@ -8,13 +10,15 @@ public class Main {
 
         GuessNumber GuessNumber = new GuessNumber(answer);
 
-        for (int roundNumber = 0; roundNumber < 6; roundNumber++) {
+        final int firstRound = 1;
+        final int lastRound = 6;
+        for (int roundNumber = firstRound; roundNumber <= lastRound; roundNumber++) {
             int[] guess = GuessNumber.inputGuess();
             if (GuessNumber.isGameWin(guess)) {
-                System.out.println("You win!!");
+                System.out.println(winMessage);
             }
-            if (roundNumber == 5) {
-                System.out.println("You failed!!");
+            if (roundNumber == lastRound) {
+                System.out.println(failedMessage);
             }
         }
     }
