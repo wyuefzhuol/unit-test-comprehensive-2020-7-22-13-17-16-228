@@ -7,10 +7,9 @@ public class Main {
         int[] answer = generateRandomAnswer.generateAnswer();
 
         GuessNumber GuessNumber = new GuessNumber(answer);
-        int[] guess = new int[4];
 
         for (int i = 0; i < 6; i++) {
-            guess = GuessNumber.inputGuess();
+            int[] guess = GuessNumber.inputGuess();
             System.out.println("Output: " + GuessNumber.guess(guess));
             if (GuessNumber.guess(guess).equals("4A0B")) {
                 System.out.println("You win!!");
