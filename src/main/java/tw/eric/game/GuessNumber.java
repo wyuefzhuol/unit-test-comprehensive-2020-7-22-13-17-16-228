@@ -44,4 +44,9 @@ public class GuessNumber {
         }
         return ""+countA+"A"+countB+"B";
     }
+
+    public boolean isGameWin(int[] guess) {
+        System.out.println("Output: " + guess(guess));
+        return guess(guess).equals("4A0B");
+    }
 }

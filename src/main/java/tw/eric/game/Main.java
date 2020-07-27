@@ -10,10 +10,8 @@ public class Main {
 
         for (int roundNumber = 0; roundNumber < 6; roundNumber++) {
             int[] guess = GuessNumber.inputGuess();
-            System.out.println("Output: " + GuessNumber.guess(guess));
-            if (GuessNumber.guess(guess).equals("4A0B")) {
+            if (GuessNumber.isGameWin(guess)) {
                 System.out.println("You win!!");
-                break;
             }
             if (roundNumber == 5) {
                 System.out.println("You failed!!");
