@@ -8,14 +8,14 @@ public class Main {
 
         GuessNumber GuessNumber = new GuessNumber(answer);
 
-        for (int i = 0; i < 6; i++) {
+        for (int roundNumber = 0; roundNumber < 6; roundNumber++) {
             int[] guess = GuessNumber.inputGuess();
             System.out.println("Output: " + GuessNumber.guess(guess));
             if (GuessNumber.guess(guess).equals("4A0B")) {
                 System.out.println("You win!!");
                 break;
             }
-            if (i == 5) {
+            if (roundNumber == 5) {
                 System.out.println("You failed!!");
             }
         }
