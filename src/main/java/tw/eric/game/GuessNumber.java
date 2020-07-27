@@ -1,6 +1,8 @@
 package tw.eric.game;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class GuessNumber {
     private int[] answer;
@@ -32,10 +34,10 @@ public class GuessNumber {
         for (int i = 0; i < answer.length; i++) {
             for (int j = 0; j < inputGuess.length; j++) {
                 if (answer[i] == inputGuess[j] && i != j) {
-                    countOfCorrectNumberAndCorrectPosition++;
+                    countOfCorrectNumberAndWrongPosition++;
                 }
                 if (answer[i] == inputGuess[j] && i == j) {
-                    countOfCorrectNumberAndWrongPosition++;
+                    countOfCorrectNumberAndCorrectPosition++;
                 }
             }
         }
@@ -49,23 +51,33 @@ public class GuessNumber {
     }
 
     public boolean isGuessValid(int[] inputGuess) {
-        if (inputGuess.length != 4) {
+        if (!isLengthValid(inputGuess.length)) {
             return false;
         }
-        int temp = 0;
-        for (int i = 0; i < inputGuess.length - 1; i++) {
-            temp = inputGuess[i];
-            for (int j = i + 1; j < inputGuess.length; j++) {
-                if (temp == inputGuess[j]) {
-                    return false;
-                }
-            }
+        if (isRepetition(inputGuess)) {
+            return false;
         }
-        for (int i = 0; i < inputGuess.length; i++) {
-            if (inputGuess[i] < 0 || inputGuess[i] > 9) {
+        return isNumberValid(inputGuess);
+    }
+
+    private boolean isNumberValid(int[] inputGuess) {
+        for (int guess : inputGuess) {
+            if (guess < 0 || guess > 9) {
                 return false;
             }
         }
         return true;
+    }
+
+    private boolean isRepetition(int[] inputGuess) {
+        Set<Integer> guessSet = new HashSet<Integer>();
+        for(Integer guessNumber : inputGuess){
+            guessSet.add(guessNumber);
+        }
+        return guessSet.size() != inputGuess.length;
+    }
+
+    private boolean isLengthValid(int guessLength) {
+        return guessLength == 4;
     }
 }
