@@ -5,9 +5,9 @@ public class Main {
     final public static String failedMessage = "You failes!!";
 
     public static void main(String[] args) {
-        GenerateRandomAnswer generateRandomAnswer = new GenerateRandomAnswer();
+        GenerateAnswer generateAnswer = new GenerateAnswer();
 
-        GuessNumber GuessNumber = new GuessNumber(generateRandomAnswer);
+        GuessNumber GuessNumber = new GuessNumber(generateAnswer);
 
         final int firstRound = 1;
         final int lastRound = 6;
