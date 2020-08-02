@@ -60,7 +60,7 @@ public class GuessNumber {
         return isNumberValid(inputGuess);
     }
 
-    private boolean isNumberValid(int[] inputGuess) {
+    public boolean isNumberValid(int[] inputGuess) {
         for (int guess : inputGuess) {
             if (guess < 0 || guess > 9) {
                 return false;
@@ -69,7 +69,7 @@ public class GuessNumber {
         return true;
     }
 
-    private boolean isRepetition(int[] inputGuess) {
+    public boolean isRepetition(int[] inputGuess) {
         Set<Integer> guessSet = new HashSet<Integer>();
         for(Integer guessNumber : inputGuess){
             guessSet.add(guessNumber);
@@ -77,7 +77,7 @@ public class GuessNumber {
         return guessSet.size() != inputGuess.length;
     }
 
-    private boolean isLengthValid(int guessLength) {
+    public boolean isLengthValid(int guessLength) {
         return guessLength == 4;
     }
 }

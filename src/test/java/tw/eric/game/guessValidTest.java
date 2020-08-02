@@ -2,7 +2,7 @@ package tw.eric.game;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -20,11 +20,11 @@ public class guessValidTest {
         boolean isValid = guessNumber.isGuessValid(inputGuess);
 
         //then
-        assertEquals(true, isValid);
+        assertTrue(isValid);
     }
 
     @Test
-    void should_return_false_when_guess_valid_given_112314() {
+    void should_return_false_when_is_number_valid_given_112314() {
         //given
         int[] answer = {1,2,3,4};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
@@ -33,14 +33,14 @@ public class guessValidTest {
         int[] inputGuess = {1,12,3,14};
 
         //when
-        boolean isValid = guessNumber.isGuessValid(inputGuess);
+        boolean isNumberValid = guessNumber.isNumberValid(inputGuess);
 
         //then
-        assertEquals(false, isValid);
+        assertFalse(isNumberValid);
     }
 
     @Test
-    void should_return_false_when_guess_valid_given_12() {
+    void should_return_false_when_is_length_valid_given_12() {
         //given
         int[] answer = {1,2,3,4};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
@@ -49,14 +49,14 @@ public class guessValidTest {
         int[] inputGuess = {1,2};
 
         //when
-        boolean isValid = guessNumber.isGuessValid(inputGuess);
+        boolean isLengthValid = guessNumber.isLengthValid(inputGuess.length);
 
         //then
-        assertEquals(false, isValid);
+        assertFalse(isLengthValid);
     }
 
     @Test
-    void should_return_false_when_guess_valid_given_1122() {
+    void should_return_false_when_is_repetition_given_1122() {
         //given
         int[] answer = {1,2,3,4};
         GenerateAnswer generateAnswer = mock(GenerateAnswer.class);
@@ -65,9 +65,9 @@ public class guessValidTest {
         int[] inputGuess = {1,1,2,2};
 
         //when
-        boolean isValid = guessNumber.isGuessValid(inputGuess);
+        boolean isRepetition = guessNumber.isRepetition(inputGuess);
 
         //then
-        assertEquals(false, isValid);
+        assertTrue(isRepetition);
     }
 }
