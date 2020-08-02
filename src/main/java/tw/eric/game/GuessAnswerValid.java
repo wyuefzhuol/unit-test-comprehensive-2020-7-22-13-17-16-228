@@ -2,6 +2,9 @@ package tw.eric.game;
 
 public class GuessAnswerValid {
     public boolean isAnswerValid(int[] generateAnswer) {
+        if (!isAnswerNumberValid(generateAnswer)) {
+            return false;
+        }
         return isAnswerLengthValid(generateAnswer.length);
     }
 
@@ -10,6 +13,11 @@ public class GuessAnswerValid {
     }
 
     public boolean isAnswerNumberValid(int[] generateAnswer) {
-        return false;
+        for (int answer : generateAnswer) {
+            if (answer < 0 || answer > 9) {
+                return false;
+            }
+        }
+        return true;
     }
 }
