@@ -47,7 +47,7 @@ public class generateAnswerTest {
     }
 
     @Test
-    void should_return_true_when_is_answer_repetition_given_generate_answer() {
+    void should_return_false_when_is_answer_repetition_given_generate_answer() {
         //given
         GenerateAnswer generateAnswer = new GenerateAnswer();
         GuessAnswerValid guessAnswerValid = new GuessAnswerValid();
@@ -56,6 +56,6 @@ public class generateAnswerTest {
         boolean isValid = guessAnswerValid.isAnswerRepetition(generateAnswer.generateAnswer());
 
         //then
-        assertTrue(isValid);
+        assertFalse(isValid);
     }
 }
