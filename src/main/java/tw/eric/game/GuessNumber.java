@@ -11,24 +11,6 @@ public class GuessNumber {
         this.answer = generateAnswer.generateAnswer();
     }
 
-    public int[] inputGuess() {
-        final String inputMessage = "Please input your guess number";
-        final String notValidMessage = "Not valid, please input again";
-        int[] guess = new int[4];
-        GuessNumberValid guessNumberValid = new GuessNumberValid();
-        Scanner sc = new Scanner(System.in);
-        do {
-            System.out.println(inputMessage);
-            for(int i = 0; i < guess.length; i++){
-                guess[i] = sc.nextInt();
-            }
-            if (!guessNumberValid.isGuessValid(guess)) {
-                System.out.println(notValidMessage);
-            }
-        } while (!guessNumberValid.isGuessValid(guess));
-        return guess;
-    }
-
     public String getGuessResult(int[] inputGuess) {
         int countOfCorrectNumberAndCorrectPosition = 0;
         int countOfCorrectNumberAndWrongPosition = 0;

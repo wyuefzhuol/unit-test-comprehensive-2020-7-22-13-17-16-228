@@ -7,13 +7,14 @@ public class Main {
     public static void main(String[] args) {
         GenerateAnswer generateAnswer = new GenerateAnswer();
 
-        GuessNumber GuessNumber = new GuessNumber(generateAnswer);
+        GuessNumber guessNumber = new GuessNumber(generateAnswer);
+        GuessInput guessInput = new GuessInput();
 
         final int firstRound = 1;
         final int lastRound = 6;
         for (int roundNumber = firstRound; roundNumber <= lastRound; roundNumber++) {
-            int[] guess = GuessNumber.inputGuess();
-            if (GuessNumber.isGameWin(guess)) {
+            int[] guess = guessInput.inputGuess();
+            if (guessNumber.isGameWin(guess)) {
                 System.out.println(winMessage);
             }
             if (roundNumber == lastRound) {
