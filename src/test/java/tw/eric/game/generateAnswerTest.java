@@ -32,4 +32,17 @@ public class generateAnswerTest {
         //then
         assertTrue(isValid);
     }
+
+    @Test
+    void should_return_true_when_is_answer_number_valid_given_generate_answer() {
+        //given
+        GenerateAnswer generateAnswer = new GenerateAnswer();
+        GuessAnswerValid guessAnswerValid = new GuessAnswerValid();
+
+        //when
+        boolean isValid = guessAnswerValid.isAnswerNumberValid(generateAnswer.generateAnswer());
+
+        //then
+        assertTrue(isValid);
+    }
 }
