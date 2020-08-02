@@ -20,4 +20,8 @@ public class GuessAnswerValid {
         }
         return true;
     }
+
+    public boolean isAnswerRepetition(int[] generateAnswer) {
+        return false;
+    }
 }
