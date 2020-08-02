@@ -27,7 +27,7 @@ public class generateAnswerTest {
         GuessAnswerValid guessAnswerValid = new GuessAnswerValid();
 
         //when
-        boolean isValid = guessAnswerValid.isAnswerLengthValid(generateAnswer.generateAnswer());
+        boolean isValid = guessAnswerValid.isAnswerLengthValid(generateAnswer.generateAnswer().length);
 
         //then
         assertTrue(isValid);
